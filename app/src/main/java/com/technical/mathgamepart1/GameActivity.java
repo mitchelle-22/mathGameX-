@@ -10,8 +10,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import java.util.Random;
 
-import kotlin.random.Random;
+
 
 public class GameActivity extends AppCompatActivity {
 
@@ -60,14 +61,17 @@ public class GameActivity extends AppCompatActivity {
     }
     fun gameContinue()
     {
-          Random r = new Random() {
-              @Override
-              public int nextBits(int i) {
-                  return 0;
-              }
-          };
-        return null;
+        Random number1 = new Random();
+        number1.nextInt(100);
+
+        Random number2 = new Random();
+        number2.nextInt(100);
+
+       // textQuestion.text = "$number1 + $number2";
+    return null;
+
     }
+
 
 
 }
