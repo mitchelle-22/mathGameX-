@@ -28,6 +28,10 @@ public class GameActivity extends AppCompatActivity {
     Button buttonOk;
     Button buttonNext;
 
+    var correctAnswer = 0;
+    var userScore = 0;
+    var userLife =3;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +48,8 @@ public class GameActivity extends AppCompatActivity {
         buttonNext = findViewById(R.id.buttonNext);
 
 
+
+       gameContinue();
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +62,18 @@ public class GameActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            var userAnswer = input.toInt()
+                            var userAnswer = input.toInt();
+                            if(userAnswer == correctAnswer)
+                            {
+                                         userScore = userScore + 10;
+                                         textQuestion.text = "Congradulations,your answer is coorrect";
+                                         textScore.text = userScore.toString()
+                            }
+                            else
+                            {
+                                userLife--
+                                        textQuestion.text ="Sorry your answer is wrong";
+                            }
                         }
 
 
@@ -81,7 +98,9 @@ public class GameActivity extends AppCompatActivity {
         Random number2 = new Random();
         number2.nextInt(100);
 
+        correctAnswer = number1 + number2;
        // textQuestion.text = "$number1 + $number2";
+
     return null;
 
     }
