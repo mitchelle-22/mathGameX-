@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Random;
 
 
@@ -45,6 +47,18 @@ public class GameActivity extends AppCompatActivity {
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                var input = editTextAnswer.text.toString()
+                        if(input == "")
+                        {
+                            Toast.makeText(getApplicationContext(),"Please write an answer",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                        {
+                            var userAnswer = input.toInt()
+                        }
+
 
             }
         });
