@@ -67,7 +67,7 @@ public class GameActivity extends AppCompatActivity {
                             {
                                          userScore = userScore + 10;
                                          textQuestion.text = "Congradulations,your answer is coorrect";
-                                         textScore.text = userScore.toString()
+                                         textScore.text = userScore;
                             }
                             else
                             {
