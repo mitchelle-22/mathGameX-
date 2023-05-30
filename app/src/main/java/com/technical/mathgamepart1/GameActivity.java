@@ -83,6 +83,8 @@ public class GameActivity extends AppCompatActivity {
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                gameContinue();
+                editTextAnswer.setText("");
 
             }
         });
